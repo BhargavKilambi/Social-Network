@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container text-center" style="margin-top:9%">
+  <div class="card">
+  <div class="card-body">
+    Snafu is a web based socia media application.
+    <hr>
+  <a href="https://github.com/BhargavKilambi" style="margin-right:10px;"><i class="ion-social-github" style="font-size:36px;" href="#"></i></a>
+    <a href="https://www.instagram.com/bhargav_ram3/" style="margin-right:10px;"><i class="ion-social-instagram-outline" style="font-size:36px;"></i></a>
+    <hr>
+    Constructive feedback and suggestions are always welcome.
+    <form method="post">
+      <br>
+        {% csrf_token %}<div class="container text-center">
+          {{feed.text}}<br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form><br>
+  </div>
+</div>
+</div>
+{% endblock %}

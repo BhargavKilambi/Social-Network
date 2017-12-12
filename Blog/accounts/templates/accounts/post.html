@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<hr>
+<div class="container text-center">
+  <div class="alert alert-primary" role="alert">
+    Your Timeline
+  </div>
+</div>
+
+{% for Post in post %}
+<div class="container">
+  <br>
+  <div class="card text-center">
+
+    <div class="card-header">
+      {{Post.author}}
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{Post.title}}</h4>
+      <p class="card-text">{{Post.text}}</p>
+      <a href="#" class="btn btn-primary">go to</a>
+    </div>
+    <div class="card-footer text-muted">
+      {{Post.created_date}}
+    </div>
+  </div>
+  <br>
+</div>
+
+{% endfor %}
+<hr>
+{% endblock %}

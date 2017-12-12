@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<div class="container">
+  <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Welcome {{user.first_name}} {{user.last_name}}!</h4>
+  <p>Up to something? What are you waiting for?</p><hr>
+  <p class="mb-0">Write a post.</p><br>
+  <form method="post">
+      {% csrf_token %}<div class="container text-center">
+        {{form.title}}<br>
+        {{form.text}}<br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+</div>
+</div>
+
+<div class="container text-center">
+  <hr>
+  <div class="alert alert-primary" role="alert">
+    Your Timeline
+  </div>
+</div>
+
+{% for Post in post %}
+
+<div class="container">
+  <br>
+  <div class="card text-center">
+
+    <div class="card-header">
+      {{Post.user.first_name}} {{Post.user.last_name}}
+    </div>
+    <div class="card-body" style="background-color:transparent">
+      <h4 class="card-title">{{Post.title}}</h4>
+      <p class="card-text">{{Post.text}}</p>
+      <a href="#" class="btn btn-primary">go to</a>
+    </div>
+    <div class="card-footer text-muted">
+      {{Post.created_date}}
+    </div>
+  </div>
+  <br>
+</div>
+{% endfor %}
+<div class="container">
+  <hr>
+</div>
+{% endblock %}

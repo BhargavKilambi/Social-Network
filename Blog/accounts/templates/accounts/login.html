@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+<div class="container-fluid text-center">
+  <div class="jumbotron" style="background-color:transparent">
+    {% if user.is_authenticated %}
+    <div class="card" style="border-color:transparent">
+  <div class="card-body">
+    <h5> You're already logged in. Go to your profile.</h5>
+  </div>
+</div>
+    {% else %}
+    <h3>You can login here!</h3><br>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Login</button>
+    </form><br>
+    <p>Not a User? <span> <a href="/accounts/register" style="font-style:italic;">Sign Up</a> </span> </p>
+    <hr>
+    {% endif %}
+  </div>
+</div>
+
+
+{% endblock %}

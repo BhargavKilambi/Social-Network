@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+    <div class="container">
+       <hr>
+        <br>
+        <div style="padding-left:30px;margin-right:50px;">
+          <h2>It's all about you!</h2><br>
+          <div class="card w-100">
+              <div class="card-body">
+                  <h4 class="card-title">{{user.first_name}} {{user.last_name}}</h4>
+                    <p class="card-text"></p>
+
+                    <h6>Username : {{user}}</h3><br>
+                    <h6>Email    : {{user.email}}</h3><br>
+                      <a href="/accounts/profile/edit/" class="btn btn-primary" style="margin-right:10px;">Edit Profile</a>      </div>
+      </div>
+
+        <hr>
+        </div>
+      </div>
+
+<!--      <button type="submit" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit Bio</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Bio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Mobile</label>
+            {% csrf_token %}
+              {{feed.phone}}
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Description</label>
+            {{feed.description}}
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Done</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+    {% endblock %}
+  </body>
+</html>
